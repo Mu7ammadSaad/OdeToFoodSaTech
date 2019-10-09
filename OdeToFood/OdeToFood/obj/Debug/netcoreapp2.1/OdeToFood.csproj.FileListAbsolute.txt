@@ -31,3 +31,7 @@ E:\ASP_work\aspNetCore\OdeToFoodSaTech\OdeToFood\OdeToFood\obj\Debug\netcoreapp2
 E:\ASP_work\aspNetCore\OdeToFoodSaTech\OdeToFood\OdeToFood\obj\Debug\netcoreapp2.1\OdeToFood.dll
 E:\ASP_work\aspNetCore\OdeToFoodSaTech\OdeToFood\OdeToFood\obj\Debug\netcoreapp2.1\OdeToFood.pdb
 E:\ASP_work\aspNetCore\OdeToFoodSaTech\OdeToFood\OdeToFood\obj\Debug\netcoreapp2.1\OdeToFood.csproj.CopyComplete
+E:\ASP_work\aspNetCore\OdeToFoodSaTech\OdeToFood\OdeToFood\bin\Debug\netcoreapp2.1\OdeToFood.Core.dll
+E:\ASP_work\aspNetCore\OdeToFoodSaTech\OdeToFood\OdeToFood\bin\Debug\netcoreapp2.1\OdeToFood.Data.dll
+E:\ASP_work\aspNetCore\OdeToFoodSaTech\OdeToFood\OdeToFood\bin\Debug\netcoreapp2.1\OdeToFood.Data.pdb
+E:\ASP_work\aspNetCore\OdeToFoodSaTech\OdeToFood\OdeToFood\bin\Debug\netcoreapp2.1\OdeToFood.Core.pdb
