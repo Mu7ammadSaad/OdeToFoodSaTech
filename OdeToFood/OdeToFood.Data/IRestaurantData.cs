@@ -8,7 +8,8 @@ namespace OdeToFood.Data
 {
     public interface IRestaurantData
     {
-        IEnumerable<Restaurant> GetAll();
+        IEnumerable<Restaurant> GetRestaurantsByName(string name);
+        Restaurant GetById(int id);
     }
 
     public class InMemoryRestaurantData : IRestaurantData
@@ -19,15 +20,20 @@ namespace OdeToFood.Data
         {
             restaurants = new List<Restaurant>()
             {
-                new Restaurant{Id = 1, Name = "ABC", Location = "JKL", Cuisine =CuisineType.Mexican},
-                new Restaurant{Id = 2, Name = "DEF", Location = "MNO", Cuisine =CuisineType.Italian},
-                new Restaurant{Id = 3, Name = "GHI", Location = "PQR", Cuisine =CuisineType.Indian}
+                new Restaurant{Id = 1, Name = "Cinnamon Club", Location = "London", Cuisine =CuisineType.Mexican},
+                new Restaurant{Id = 2, Name = "La Costa", Location = "California", Cuisine =CuisineType.Italian},
+                new Restaurant{Id = 3, Name = "Scott's Pizza", Location = "Maryland", Cuisine =CuisineType.Indian}
             };
         }
+        public Restaurant GetById(int id)
+        {
+            return restaurants.SingleOrDefault(r => r.Id == id);
+        }
 
-        public IEnumerable<Restaurant> GetAll()
+        public IEnumerable<Restaurant> GetRestaurantsByName(string name = null)
         {
             return from r in restaurants
+                   where string.IsNullOrEmpty(name) || r.Name.StartsWith(name)
                    orderby r.Name
                    select r;
         }

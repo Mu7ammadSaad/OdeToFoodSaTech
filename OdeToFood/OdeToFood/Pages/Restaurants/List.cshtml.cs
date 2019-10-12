@@ -8,7 +8,7 @@ using Microsoft.Extensions.Configuration;
 using OdeToFood.Core;
 using OdeToFood.Data;
 
-namespace OdeToFood.Pages.Resstaurant
+namespace OdeToFood.Pages.Restaurants
 {
     public class ListModel : PageModel
     {
@@ -16,7 +16,10 @@ namespace OdeToFood.Pages.Resstaurant
         private readonly IRestaurantData restaurantData;
 
         public string Message { get; set; }
-        public IEnumerable<Restaurant> Restaurants { get; set; }
+        public IEnumerable<Core.Restaurant> Restaurants { get; set; }
+
+        [BindProperty(SupportsGet = true)]
+        public string SearchTerm { get; set; }
 
         public ListModel(IConfiguration config, IRestaurantData restaurantData)
         {
@@ -26,8 +29,9 @@ namespace OdeToFood.Pages.Resstaurant
 
         public void OnGet()
         {
+
             Message = config["Message_01"];
-            Restaurants = restaurantData.GetAll();
+            Restaurants = restaurantData.GetRestaurantsByName(SearchTerm);
         }
     }
 }
